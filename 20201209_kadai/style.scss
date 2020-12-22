@@ -1,0 +1,469 @@
+$base-color: #6C6C6F;
+$main-color: #256be6;
+$bg-color: #123D88;
+$bg-color2: #F7FAFF;
+
+@mixin basic-inner{
+  width: 92%;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+@mixin basic-flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* ベース
+---------------------------*/
+body{
+  color: $base-color;
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: (28/16);
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+ul{
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* header */
+.header{
+  padding: 30px 0;
+  background-color: $bg-color;
+
+  &__inner{
+    @include basic-inner;
+    @include basic-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title{
+    line-height: 1;
+  }
+}
+
+/* g-nav */
+.g-nav{
+
+  &__list{
+    @include basic-flex;
+  }
+
+  &__item{
+    margin-left: 30px;
+  }
+
+  &__link{
+    color: #fff;
+  }
+}
+
+// card
+
+.card{
+  border-radius: 5px;
+  background-color: #fff;
+
+  &__icon{
+    margin-bottom: 15px;
+  }
+
+  &__title{
+    color: #2f2f35;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  &--shadow{
+    padding: 50px 25px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.05);
+  }
+}
+
+// media
+.media{
+  &__title{
+    margin-bottom: 20px;
+    color: #262934;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1.33;
+  }
+
+  &__sub-title{
+    margin-bottom: 15px !important;
+    color: $main-color;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  &--lead{
+    min-width: 770px;
+    margin: 0 auto;
+  }
+}
+
+.btn{
+
+  color: #fff;
+  padding: 20px 45px;
+  border-radius: 27.5px;
+  background-color: $main-color;
+}
+
+// footer
+.footer{
+  padding: 30px 0;
+  background-color: $bg-color;
+
+  .footer{
+
+
+    &__inner{
+      @include basic-inner();
+
+      p{
+        color: #fff;
+        font-size: 15px;
+        line-height: 0;
+        text-align: end;
+      }
+    }
+  }
+}
+
+/* features */
+.features{
+
+  &__inner{
+    @include basic-inner;
+    @include basic-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__info{
+    width: 42.7%;
+
+    p{
+      margin-bottom: 70px;
+    }
+  }
+
+  &__list{
+    @include basic-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50.4%;
+  }
+
+  &__card{
+    width: 44%;
+    margin: 40px 0;
+  }
+
+  &__card:nth-child(-n+2){
+    margin-top: 80px;
+  }
+
+  &__card:nth-child(n+3):nth-child(-n+4){
+    margin-bottom: 80px;
+  }
+}
+
+// payment
+.payment{
+  padding: 80px 0;
+  background-color: $bg-color2;
+
+  &__inner{
+    @include basic-inner;
+    @include basic-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  p{
+    margin-bottom: 80px;
+  }
+
+  &__image{
+    width: 50%;
+  }
+
+  &__info{
+    width: 42%;
+  }
+
+}
+
+.speciality{
+  margin-bottom: 80px;
+  text-align: center;
+
+  &__inner{
+    @include basic-inner();
+  }
+
+  &__info{
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 60px;
+  }
+
+  &__list{
+    @include basic-flex();
+    width: 87%;
+    margin:0 auto;
+    justify-content: space-between;
+  }
+
+  &__card{
+    width: 31%;
+  }
+}
+
+.choose{
+  margin-bottom: 80px;
+  &__inner{
+    @include basic-inner();
+  }
+
+  &__info{
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  &__list{
+    @include basic-flex();
+    justify-content: space-between;
+  }
+
+  &__card{
+    width: 48%;
+    @include basic-flex();
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__card:nth-child(-n+2){
+    margin-bottom: 30px;
+  }
+
+  .card{
+    &__icon{
+      width: 12%;
+      margin-bottom: 0;
+    }
+    &__info{
+      width: 80%;
+    }
+
+    &--shadow{
+      padding: 35px 25px;
+    }
+  }
+}
+
+.foryou{
+  padding: 80px 100px;
+  text-align: center;
+  background-color: $bg-color;
+
+  &__inner{
+    @include basic-inner();
+    width: 65%;
+
+    h2, p, a{
+      color: #fff;
+    }
+
+    img{
+      margin-top: 60px;
+      margin-bottom: 80px;
+    }
+
+    .btn{
+      border: 1px solid #fff;
+      background-color: $bg-color;
+    }
+  }
+
+  &__info{
+    width: 65%;
+    margin: 0 auto;
+  }
+}
+
+.what{
+  margin-bottom: 80px;
+  text-align: center;
+
+  &__inner{
+    @include basic-inner();
+    width: 65%;
+    margin: 0 auto;
+  }
+
+  &__info{
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 50px;
+  }
+
+  &__list{
+    @include basic-flex();
+    width: 82%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__card{
+    width:30%;
+  }
+
+  .card{
+    &--shadow{
+      padding: 40px 15px 50px 15px;
+      box-shadow: 0 5px 30px rgba(0,0,0,0.05);
+    }
+  }
+
+  dd{
+    margin-bottom: 40px;
+  }
+
+  .btn{
+      background-color: #2DBE61;
+    }
+}
+
+.secure{
+  text-align: center;
+  margin-bottom: 80px;
+  &__inner{
+    @include basic-inner();
+  }
+
+  &__info{
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 50px;
+  }
+
+  &__list{
+    @include basic-flex();
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__card{
+    width: 31%;
+  }
+}
+
+.payment2{
+  padding: 80px 0;
+  background-color: $bg-color2;
+
+  &__inner{
+    @include basic-inner();
+    @include basic-flex();
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__info{
+    width: 57%;
+  }
+
+  &__image{
+    width: 35%;
+  }
+
+  p{
+    margin-bottom: 80px;
+  }
+}
+
+.question{
+    padding: 80px 0;
+    color: #fff;
+    text-align: center;
+    background-color: $bg-color;
+
+    &__inner{
+      @include basic-inner();
+    }
+
+    &__info{
+      width: 57%;
+      margin: 0 auto;
+
+      .media__title{
+        color: #fff;
+      }
+
+      p{
+      margin-bottom: 80px;
+      }
+    }
+
+    .btn{
+        background-color: #F87624;
+      }
+}
+
+.questions{
+  margin: 80px 0;
+  text-align: center;
+
+  &__inner{
+    @include basic-inner();
+  }
+
+  &__info{
+    width: 57%;
+    margin: 0 auto;
+
+    p{
+      margin-bottom: 60px;
+    }
+  }
+
+  &__list{
+    width: 80%;
+    margin: 0 auto;
+    @include basic-flex();
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__card:first-child{
+    background-color: $main-color;
+
+    .card__title{
+      color: #fff;
+    }
+  }
+
+}
